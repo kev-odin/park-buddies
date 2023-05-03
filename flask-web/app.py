@@ -11,7 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/login.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
-login.init_app(app)
+login.init_app(app) # type: ignore
 
 
 def add_user(email, password, state):
