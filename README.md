@@ -75,13 +75,5 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## How to Contribute
 If you are intrested in contributing to this project, feel free to create an issue, fork the repository, and create a pull request. If new features are added, write relevant unit and integration tests to ensure code coverage.
 
-
-## Credits
-<!-- List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well. -->
-
 ## License
 Park Buddies is licensed under the [MIT License](LICENSE.txt).
