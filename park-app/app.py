@@ -1,3 +1,7 @@
+# Description: Main application file for Park Buddies, responsible for routing and rendering templates
+# Todo: Refactor into smaller files: __init__.py, forms.py, models.py, nps_api.py, app_lists.py
+# Todo: Add environment variables for Flask secret key and database URI
+
 from forms import LoginForm, RegisterForm, SettingsForm, searchForm, ActivitiesForm
 from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_login import current_user, login_user, login_required, logout_user

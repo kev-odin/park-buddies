@@ -1,3 +1,6 @@
+# Description: ORM tables to be used with SQLAlchemy, and Flask-Login
+# Todo: remove references to db and login, and move to a separate file
+
 from hashlib import md5
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash

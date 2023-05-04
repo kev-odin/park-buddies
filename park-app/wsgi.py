@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# Entry point for the application in production environment
 from app import app
 
 if __name__ == "__main__":

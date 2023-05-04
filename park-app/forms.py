@@ -1,3 +1,6 @@
+# Desc: Forms for user login, registration, and settings.
+# Todo: Add form for activities search. Remove login and registration forms from app.py
+
 from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
