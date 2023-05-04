@@ -7,11 +7,11 @@ from nps_api import webcams, parks, activities as list_activities, activities_pa
 
 app = Flask(__name__)
 app.secret_key = "PC_LOAD_LETTER"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/login.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data/login.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
-login.init_app(app) # type: ignore
+login.init_app(app)  # type: ignore
 
 
 def add_user(email, password, state):
@@ -44,7 +44,7 @@ def index():
         "Gunicorn": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Gunicorn_logo_2010.svg/320px-Gunicorn_logo_2010.svg.png",
         "Amazon Web Services": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/320px-Amazon_Web_Services_Logo.svg.png",
         "National Park Service": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/184px-Logo_of_the_United_States_National_Park_Service.svg.png",
-        "Stack Overflow": "https://upload.wikimedia.org/wikipedia/commons/0/02/Stack_Overflow_logo.svg"
+        "Stack Overflow": "https://upload.wikimedia.org/wikipedia/commons/0/02/Stack_Overflow_logo.svg",
     }
     return render_template("index.html", title=title, tech=technology_dict)
 
@@ -156,8 +156,8 @@ def _activs_parks_xform(data):
             if a_name not in r[p_id]["acts"]:
                 r[p_id]["acts"][a_name] = False
 
-    results = [{'id': k, 'name': v['name'], 'acts': v["acts"]} for k, v in r.items()]
-    print (f"results = {r}")
+    results = [{"id": k, "name": v["name"], "acts": v["acts"]} for k, v in r.items()]
+    print(f"results = {r}")
     return results
 
 
@@ -207,8 +207,9 @@ def activities():
         # Then by largest match subset
         r2 = sorted(results, key=lambda x: -len([1 for a in x["acts"].values() if a]))
         results = r2
-    return render_template("activities.html", title=title,
-                           form=form, chosen=chosen, results=results)
+    return render_template(
+        "activities.html", title=title, form=form, chosen=chosen, results=results
+    )
 
 
 @app.route("/webcam")
