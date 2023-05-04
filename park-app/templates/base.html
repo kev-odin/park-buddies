@@ -21,7 +21,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          {% if current_user.is_authenticated %}
+          
           <div class="btn-group">
             <button type="button" class="btn btn-warning dropdown-toggle dropdown" data-bs-toggle="dropdown"
               aria-expanded="false">Services</button>
@@ -32,26 +32,24 @@
               <li><a class="dropdown-item" href="{{ url_for("webcam") }}">Webcam</a></li>
             </ul>
           </div>
-          {% endif %}
+      
         </ul>
       </div>
-      {% if current_user.is_authenticated %}
+      
       <div class="btn-group">
         <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="{{ current_user.avatar(48) }}" width="48" height="48" class="rounded">
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li><a class="dropdown-item" href="{{ url_for("home") }}"> Home </a></li>
-          <li><a class="dropdown-item" href="{{ url_for("settings") }}">Settings</a></li>
           <li>
             <hr class="dropdown-divider">
           </li>
           <li><a class="dropdown-item" href="{{ url_for("logout") }}">Logout</a></li>
         </ul>
       </div>
-      {% else %}
+    
       <a class="btn btn-primary" href="{{ url_for("login") }}" role="button">Login</a>
-      {% endif %}
+
     </div>
   </nav>
 
